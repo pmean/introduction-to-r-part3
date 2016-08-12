@@ -20,7 +20,7 @@ tail(pu)
 Since the file looks good, let's save a local copy.
 
 ```{r write-pu}
-write.csv(pu,file="day3_fev.txt",row.names=FALSE,col.names=FALSE)
+write.csv(pu,file="fev.txt",row.names=FALSE,col.names=FALSE)
 ```
 
 ## Assign names and create factors
@@ -142,7 +142,7 @@ You should cut-and-paste the actual data to notepad and save it with the name ho
 For technical reasons, you want the as.is=TRUE argument. Otherwise AGe and TAX are converted to factors which causes all sorts of grief.
 
 ```{r read.housing}
-al <- read.table(file="day3_housing.txt",header=TRUE,as.is=TRUE)
+al <- read.table(file="housing.txt",header=TRUE,as.is=TRUE)
 head(al)
 tail(al)
 ```
@@ -195,5 +195,5 @@ and a description is at
 ## Save all my work
 
 ```{r save-image}
-save.image("day3.RData")
+save.image("part3.RData")
 ```
