@@ -1,4 +1,4 @@
-# Part 3 lectures and exercises
+# Part 3a. Read in data and assign names
 
 The following is for my own benefit. You do not need to run this.
 
@@ -73,7 +73,7 @@ table(pu$sex,pu$smoke.factor)
 prop.table(table(pu$sex,pu$smoke.factor),margin=1)
 ```
 
-## boxplots
+# Part 3b. boxplots
 
 When you want to look at a relationship between a categorical variable and a continuous variable, you should use a boxplot.
 
@@ -92,7 +92,7 @@ boxplot(age~smoke.factor,data=pu)
 
 Look at the relationship between sex and fev.
 
-## Means and standard deviations by group
+# Part 3c. Means and standard deviations by group
 
 You should also calculate the means for each continuous variable within each level of the categorical variable.
 
