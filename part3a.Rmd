@@ -1,0 +1,53 @@
+---
+title: "Introduction to R, part 3a"
+author: "Steve Simon"
+date: "Saturday, August 13, 2016"
+output: html_document
+---
+
+# Part 3a. Read in data and assign names
+
+This program illustrates how to import and manipulate simple data sets in R and how to produce some simple descriptive statistics. Included in this program are some exercises for you to do on your own.
+
+Start with a clean data set.
+
+```{r clean-slate}
+rm(list=ls())
+```
+
+Today, you will analyze some data sets that have a mix of categorical and continuous variables.
+
+## read in the pu data set
+
+```{r read.pu}
+fn <- "http://www.amstat.org/publications/jse/datasets/fev.dat.txt"
+pu <- read.table(file=fn)
+head(pu)
+tail(pu)
+```
+
+Since the file looks good, let's save a local copy.
+
+```{r write-pu}
+write.csv(pu,file="fev.txt",row.names=FALSE,col.names=FALSE)
+```
+
+## Assign names and create factors
+
+You should assign names to each column of data and convert the columns with numeric codes into factors
+
+```{r factors.pu}
+names(pu) <- c("age","fev","ht","sex","smoke")
+pu$smoke.factor <- factor(pu$smoke,levels=0:1,
+                          labels=c("nonsmoker","smoker"))
+```
+
+## On your own
+
+Create a factor for sex.
+
+## Save all my work
+
+```{r save-image}
+save.image("part3a.RData")
+```
