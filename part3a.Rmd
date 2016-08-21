@@ -5,9 +5,12 @@ date: "Saturday, August 13, 2016"
 output: html_document
 ---
 
-# Part 3a. Read in data and assign names
+This program is part of a series of R programs for the Introduction to R class. This program shows you how to read the text file that you need for most of Part 3.
 
-This program illustrates how to import and manipulate simple data sets in R and how to produce some simple descriptive statistics. Included in this program are some exercises for you to do on your own.
+```{r r-version-and-current-date}
+R.version.string
+Sys.Date()
+```
 
 Start with a clean data set.
 
@@ -15,7 +18,9 @@ Start with a clean data set.
 rm(list=ls())
 ```
 
-Today, you will analyze some data sets that have a mix of categorical and continuous variables.
+Today, you will analyze some data sets that have a mix of categorical and continuous variables. The first data set looks at pumonary function in a group of children. You can find a description of this data set at
+
+--> http://www.amstat.org/publications/jse/datasets/fev.dat.txt
 
 ## read in the pu data set
 
@@ -38,13 +43,18 @@ You should assign names to each column of data and convert the columns with nume
 
 ```{r factors.pu}
 names(pu) <- c("age","fev","ht","sex","smoke")
-pu$smoke.factor <- factor(pu$smoke,levels=0:1,
-                          labels=c("nonsmoker","smoker"))
+pu$smoke.factor <- factor(pu$smoke, levels=0:1,    labels=c("nonsmoker", "smoker"))
 ```
 
 ## On your own
 
 Create a factor for sex.
+
+## Don't peek below until you've done this yourself.
+
+```{r additional-factors}
+pu$sex.factor <- factor(pu$sex, levels=0:1,    labels=c("female", "male"))
+```
 
 ## Save all my work
 

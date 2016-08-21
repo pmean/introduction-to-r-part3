@@ -122,12 +122,15 @@ $(document).ready(function () {
 </div>
 
 
-<div id="part-3a.-read-in-data-and-assign-names" class="section level1">
-<h1>Part 3a. Read in data and assign names</h1>
-<p>This program illustrates how to import and manipulate simple data sets in R and how to produce some simple descriptive statistics. Included in this program are some exercises for you to do on your own.</p>
+<p>This program is part of a series of R programs for the Introduction to R class. This program shows you how to read the text file that you need for most of Part 3.</p>
+<pre class="r"><code>R.version.string</code></pre>
+<pre><code>## [1] &quot;R version 3.3.1 (2016-06-21)&quot;</code></pre>
+<pre class="r"><code>Sys.Date()</code></pre>
+<pre><code>## [1] &quot;2016-08-21&quot;</code></pre>
 <p>Start with a clean data set.</p>
 <pre class="r"><code>rm(list=ls())</code></pre>
-<p>Today, you will analyze some data sets that have a mix of categorical and continuous variables.</p>
+<p>Today, you will analyze some data sets that have a mix of categorical and continuous variables. The first data set looks at pumonary function in a group of children. You can find a description of this data set at</p>
+<p>–&gt; <a href="http://www.amstat.org/publications/jse/datasets/fev.dat.txt" class="uri">http://www.amstat.org/publications/jse/datasets/fev.dat.txt</a></p>
 <div id="read-in-the-pu-data-set" class="section level2">
 <h2>read in the pu data set</h2>
 <pre class="r"><code>fn &lt;- &quot;http://www.amstat.org/publications/jse/datasets/fev.dat.txt&quot;
@@ -157,17 +160,19 @@ head(pu)</code></pre>
 <h2>Assign names and create factors</h2>
 <p>You should assign names to each column of data and convert the columns with numeric codes into factors</p>
 <pre class="r"><code>names(pu) &lt;- c(&quot;age&quot;,&quot;fev&quot;,&quot;ht&quot;,&quot;sex&quot;,&quot;smoke&quot;)
-pu$smoke.factor &lt;- factor(pu$smoke,levels=0:1,
-                          labels=c(&quot;nonsmoker&quot;,&quot;smoker&quot;))</code></pre>
+pu$smoke.factor &lt;- factor(pu$smoke, levels=0:1,    labels=c(&quot;nonsmoker&quot;, &quot;smoker&quot;))</code></pre>
 </div>
 <div id="on-your-own" class="section level2">
 <h2>On your own</h2>
 <p>Create a factor for sex.</p>
 </div>
+<div id="dont-peek-below-until-youve-done-this-yourself." class="section level2">
+<h2>Don’t peek below until you’ve done this yourself.</h2>
+<pre class="r"><code>pu$sex.factor &lt;- factor(pu$sex, levels=0:1,    labels=c(&quot;female&quot;, &quot;male&quot;))</code></pre>
+</div>
 <div id="save-all-my-work" class="section level2">
 <h2>Save all my work</h2>
 <pre class="r"><code>save.image(&quot;part3a.RData&quot;)</code></pre>
-</div>
 </div>
 
 

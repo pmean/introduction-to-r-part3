@@ -5,7 +5,12 @@ date: "Saturday, August 13, 2016"
 output: html_document
 ---
 
-# Part 3b. Correlations and scatterplots review
+This program is part of a series of R programs for the Introduction to R class. This program reviews scatterplots, correlations, and crosstabulations.
+
+```{r r-version-and-current-date}
+R.version.string
+Sys.Date()
+```
 
 Erase any stray data and load the data from part 3a.
 
@@ -31,7 +36,6 @@ Calculate correlations among age, ht, and fev.
 Recall that you use a scatterplot to examine the relationship between two continuous variables.
 
 ```{r pu.scatterplot}
-plot(pu$age,pu$fev)
 plot(pu$ht,pu$fev)
 smooth.curve <- lowess(pu$ht,pu$fev)
 lines(smooth.curve)
@@ -46,8 +50,9 @@ Draw a scatterplot for age and fev. Add a linear regression trend line to this g
 Also recall that you use a crosstabulation to examine the relationship between two categorical variables.
 
 ```{r pu.crosstabs}
-table(pu$sex,pu$smoke.factor)
+table(pu$sex.factor,pu$smoke.factor)
 prop.table(table(pu$sex,pu$smoke.factor),margin=1)
+round(100*prop.table(table(pu$sex.factor,pu$smoke.factor),margin=1))
 ```
 
 ## Save all my work

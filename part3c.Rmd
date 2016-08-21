@@ -5,7 +5,12 @@ date: "Saturday, August 13, 2016"
 output: html_document
 ---
 
-# Part 3c. boxplots
+This program is part of a series of R programs for the Introduction to R class. This program shows you how to draw boxplots.
+
+```{r r-version-and-current-date}
+R.version.string
+Sys.Date()
+```
 
 Erase any stray data and load the data from part 3b.
 
