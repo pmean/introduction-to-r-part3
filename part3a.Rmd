@@ -20,7 +20,7 @@ rm(list=ls())
 
 Today, you will analyze some data sets that have a mix of categorical and continuous variables. The first data set looks at pumonary function in a group of children. You can find a description of this data set at
 
---> http://www.amstat.org/publications/jse/datasets/fev.dat.txt
+--> http://ww2.amstat.org/publications/jse/datasets/fev.txt
 
 ## read in the pu data set
 
