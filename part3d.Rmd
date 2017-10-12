@@ -64,7 +64,7 @@ You should find the data file on housing prices in Albuquerque at
 
 You should cut-and-paste the actual data to notepad and save it with the name housing.txt. You need to read in the file using the read.table function.
 
-For technical reasons, you want the as.is=TRUE argument. Otherwise AGe and TAX are converted to factors which causes all sorts of grief.
+For technical reasons, you want the as.is=TRUE argument. Otherwise AGE and TAX are converted to factors which causes all sorts of grief.
 
 ```{r read.housing}
 al <- read.table(file="housing.txt",header=TRUE,as.is=TRUE)
